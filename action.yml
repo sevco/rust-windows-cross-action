@@ -14,7 +14,7 @@ inputs:
     required: false
 runs:
   using: "docker"
-  image: "docker://sevcosec/rust-windows-cross-action:1.0.1"
+  image: "docker://sevcosec/rust-windows-cross-action:1.0.3"
   args:
     - ${{ inputs.args }}
     - ${{ inputs.directory }}

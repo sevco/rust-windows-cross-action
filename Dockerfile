@@ -1,4 +1,4 @@
-FROM rust:1.52.1-slim
+FROM rust:1.55.0-slim
 
 USER root
 

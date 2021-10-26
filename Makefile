@@ -1,4 +1,6 @@
-test: IMAGE=$(shell docker build -q .) 
+TOOLCHAIN ?= 1.56.0
+
+test: IMAGE=$(shell docker build --build-arg TOOLCHAIN="$(TOOLCHAIN)" -q .) 
 test: image build/rustls
 	mkdir -p build/.cargo && echo '\n[registries.test]\nindex="https://test.test/test.git"' > build/.cargo/config
 	echo "Building crate in container" && \
@@ -13,7 +15,7 @@ test: image build/rustls
 	@[ -d build/rustls/target/x86_64-pc-windows-gnu ] || exit 1
 
 image: 
-	@docker build .	
+	@docker build --build-arg TOOLCHAIN="$(TOOLCHAIN)" .	
 
 .PHONY:
 clean:

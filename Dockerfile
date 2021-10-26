@@ -1,4 +1,5 @@
-FROM rust:1.55.0-slim
+ARG TOOLCHAIN
+FROM rust:${TOOLCHAIN}
 
 USER root
 

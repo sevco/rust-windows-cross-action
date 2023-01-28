@@ -11,7 +11,7 @@ Rust Windows Builder Action
 GitHub action for building windows targeted rust binaries (x86_64-pc-windows-gnu). 
 
 ```yaml
-- uses: sevco/rust-windows-cross-action@1.66.1
+- uses: sevco/rust-windows-cross-action@1.67.0
   with:
     args: build --release --all-features
     git_credentials: ${{ secrets.GIT_CREDENTIALS }}
